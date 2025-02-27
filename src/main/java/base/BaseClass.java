@@ -20,6 +20,22 @@ public class BaseClass {
     protected static Properties prop;
     protected static WebDriver driver;
 
+    public static Properties getProp() {
+        return prop;
+    }
+
+    public static WebDriver getDriver() {
+        return driver;
+    }
+
+    public static void setProp(Properties prop) {
+        BaseClass.prop = prop;
+    }
+
+    public static void setDriver(WebDriver driver) {
+        BaseClass.driver = driver;
+    }
+
     @BeforeMethod
     public void setUp() throws IOException {
         System.out.println("Setting up the test" + this.getClass().getSimpleName());

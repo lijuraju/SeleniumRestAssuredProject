@@ -1,5 +1,6 @@
 package actionDriver;
 
+import base.BaseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -16,7 +17,8 @@ public class ActionDriver {
 
     public ActionDriver(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        int explicitWait = Integer.parseInt(BaseClass.getProp().getProperty("explicitWait"));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(explicitWait));
     }
 
     public void waitForElementToBeClickable(By by){
